@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import 'tailwindcss';
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Colors */
+
+.grey-500 {
+  color: #4D4F62;
+}
+.grey-400 {
+  color: #6A7178;
+}
+.red {
+  color: #EA5454;
+}
+.cyan {
+  color: #44D3D2;
+}
+.blue {
+  color: #549EF2;
+}
+.orange {
+  color: #FCAE4A;
+}
+
+/* Typography */
+
+.text-preset-1 {
+  font-size: 2.25rem;
+  line-height: 140%;
+  letter-spacing: 0.01625rem;
+  font-weight: 600;
+}
+.text-preset-2 {
+  font-size: 2.25rem;
+  line-height: 140%;
+  letter-spacing: 0.01625rem;
+  font-weight: 200;
+}
+.text-preset-3 {
+  font-size: 1.25rem;
+  line-height: 135%;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+.text-preset-4 {
+  font-size: 0.9375rem;
+  line-height: 140%;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+.text-preset-5 {
+  font-size: 0.8125rem;
+  line-height: 160%;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: 2em;
+  grid-row-gap: 2em;
+  grid-template-areas:
+    '. title .'
+    '. buider .'
+    'supervisor buider calculator'
+    'supervisor karma calculator'
+    '. karma .' 
+}
+
+.builder {
+  grid-area: buider;
+}
+.supervisor {
+  grid-area: supervisor;
+}
+.karma {
+  grid-area: karma;
+}
+.calculator {
+  grid-area: calculator;
+}
+.title-container {
+  grid-area: title;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+@media  (max-width: 768px) {
+
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      'title title title title'
+      '. supervisor supervisor .'
+      'buider buider karma karma'
+      '. calculator calculator .' 
+  }
+  .title-container {
+    grid-area: title;
+    grid-column-start: 1;
+    grid-column-end: 6;
+  }
+
+  .title{
+    width: 65%;
+  }
+  
+}
+@media (max-width: 468px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'title'
+      'supervisor'
+      'buider'
+      'karma'
+      'calculator' 
+  }
+  .builder {
+    grid-area: buider;
+    grid-column-end: 6;
+  }
+  .supervisor {
+    grid-area: supervisor;
+    grid-column-end: 6;
+  }
+  .karma {
+    grid-area: karma;
+    grid-column-end: 6;
+  }
+  .calculator {
+    grid-area: calculator;
+    grid-column-end: 6;
+  }
+  .title-container {
+    grid-area: title;
+    grid-column-end: 6;
+  }
+  .title{
+    width: 100%;
+  }
+
+  .text-preset-1 {
+    font-size: 1.8rem;
+  }
+  .text-preset-2 {
+    font-size: 1.8rem;
+  }
+  
+} 
+  
